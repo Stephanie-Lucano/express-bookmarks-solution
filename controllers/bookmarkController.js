@@ -38,7 +38,7 @@ bookmarks.put("/:arrayIndex", async (req, res) => {
 
 // CREATE
 
-bookmarks.post("/", validateURL, (req, res) => {
+bookmarks.post("/", validateURL, async (req, res) => {
   const updatedArray = await bookmarkArray.push(req.body);
   res.json(bookmarkArray[updatedArray - 1]);
 });
